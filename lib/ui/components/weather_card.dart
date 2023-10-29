@@ -100,15 +100,15 @@ class _WeatherCardState extends State<WeatherCard> {
             ]),
           ),
           const Divider(),
-          const Align(
+          Align(
               alignment: Alignment.centerLeft,
               child: Wrap(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Text(
-                      'Prévisions de la journée',
-                      style: TextStyle(fontSize: 16.0),
+                      'Prévisions'.toUpperCase(),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
                   ),
                 ],
