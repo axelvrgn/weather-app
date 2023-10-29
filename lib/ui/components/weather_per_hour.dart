@@ -16,8 +16,6 @@ class _WeatherPerHourState extends State<WeatherPerHour> {
     super.initState();
   }
 
-  final hour_format = new DateFormat('hh');
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,11 +27,9 @@ class _WeatherPerHourState extends State<WeatherPerHour> {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Text(
-                '${DateFormat('HH').format(DateTime.parse(widget.hourItem.time!))}h'),
-            // Text(
-            //   '${hour_format.format(DateTime.parse(widget.hourItem.time!))}h',
-            //   style: const TextStyle(fontSize: 16.0),
-            // ),
+              '${DateFormat('HH').format(DateTime.parse(widget.hourItem.time!))}h',
+              style: const TextStyle(fontSize: 16.0),
+            ),
             Padding(
               padding: const EdgeInsets.all(6),
               child: Image.network('https:${widget.hourItem.condition!.icon}',
@@ -41,7 +37,7 @@ class _WeatherPerHourState extends State<WeatherPerHour> {
             ),
             Text(
               '${widget.hourItem.temp_c!.round()}°',
-              style: const TextStyle(fontSize: 17.0),
+              style: const TextStyle(fontSize: 18.0),
             ),
           ],
         ),

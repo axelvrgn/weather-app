@@ -34,7 +34,8 @@ class _WeatherCardState extends State<WeatherCard> {
         .addAll(widget.weather.forecast!.forecastday![1].hour!);
     hourItemsFromNowTomorrow.removeRange(
         widget.weather.forecast!.forecastday![1].hour!.length -
-            hourItemsFromNowToday.length,
+            hourItemsFromNowToday.length +
+            1,
         widget.weather.forecast!.forecastday![1].hour!.length);
     hourItemsFromNowFor24H.addAll(hourItemsFromNowToday);
     hourItemsFromNowFor24H.addAll(hourItemsFromNowTomorrow);
@@ -69,7 +70,7 @@ class _WeatherCardState extends State<WeatherCard> {
                   height: 70, fit: BoxFit.fill),
               Text(
                 '${widget.weather.current!.condition!.text}',
-                style: const TextStyle(fontSize: 18.0),
+                style: const TextStyle(fontSize: 20.0),
               ),
             ],
           ),
@@ -83,6 +84,7 @@ class _WeatherCardState extends State<WeatherCard> {
                     const Icon(Icons.arrow_upward),
                     Text(
                       '${widget.weather.forecast!.forecastday![0].day!.maxtemp_c} °',
+                      style: const TextStyle(fontSize: 18.0),
                     ),
                   ],
                 ),
@@ -95,6 +97,7 @@ class _WeatherCardState extends State<WeatherCard> {
                         const Icon(Icons.arrow_downward),
                         Text(
                           '${widget.weather.forecast!.forecastday![0].day!.mintemp_c} °',
+                          style: const TextStyle(fontSize: 18.0),
                         ),
                       ]))
             ]),
@@ -108,7 +111,7 @@ class _WeatherCardState extends State<WeatherCard> {
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
                       'Prévisions'.toUpperCase(),
-                      style: const TextStyle(fontSize: 16.0),
+                      style: const TextStyle(fontSize: 18.0),
                     ),
                   ),
                 ],
