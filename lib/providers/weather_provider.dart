@@ -9,7 +9,6 @@ import 'package:weather_app/services/weather_service.dart';
 import '../utilities/utilities.dart';
 
 class WeatherProvider extends ChangeNotifier {
-  bool isBack = false;
   bool errorWeather = false;
 
   bool loadingWeather = false;

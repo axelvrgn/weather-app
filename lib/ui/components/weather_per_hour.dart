@@ -31,13 +31,23 @@ class _WeatherPerHourState extends State<WeatherPerHour> {
               style: const TextStyle(fontSize: 16.0),
             ),
             Padding(
-              padding: const EdgeInsets.all(6),
+              padding: const EdgeInsets.all(2),
               child: Image.network('https:${widget.hourItem.condition!.icon}',
                   height: 50, fit: BoxFit.fill),
             ),
+            widget.hourItem.chance_of_rain! > 10
+                ? Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: Text(
+                      '${widget.hourItem.chance_of_rain}%',
+                      style:
+                          const TextStyle(fontSize: 12.0, color: Colors.blue),
+                    ),
+                  )
+                : Container(height: 18.0),
             Text(
               '${widget.hourItem.temp_c!.round()}°',
-              style: const TextStyle(fontSize: 18.0),
+              style: const TextStyle(fontSize: 20.0),
             ),
           ],
         ),

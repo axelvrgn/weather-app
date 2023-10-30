@@ -9,11 +9,11 @@ class NoData extends StatelessWidget {
     return Container(
         color: WHITE_COLOR,
         alignment: Alignment.center,
-        child: Flex(
+        child: const Flex(
           direction: Axis.vertical,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Center(
                 child: Icon(
               Icons.search_sharp,
@@ -24,7 +24,7 @@ class NoData extends StatelessWidget {
               height: 15,
             ),
             Text(
-              "Aucune données disponible pour l'instant",
+              "Aucune donnée disponible pour l'instant",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, color: PURPLE_COLOR),
             ),

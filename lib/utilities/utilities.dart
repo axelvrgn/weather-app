@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:weather_app/ui/views/big_container.dart';
 import '../model/enum.dart';
 import 'constant.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -18,9 +15,6 @@ class Utilities {
   static const String AD_BANNER_UNIT_ID = "";
 
   static const String AD_REWARDED_UNIT_ID = "";
-
-  static DateTime THREE_DAYS_AGO =
-      DateTime.now().subtract(const Duration(days: 3));
 
   /* This function return icon path according PostSource */
   String getApplicationStatus(String status) {
@@ -51,52 +45,6 @@ class Utilities {
     }
   }
 
-  /* This function return icon path according PostSource */
-  Color getPostTweetIconColor(String source) {
-    if (source == 'facebook') {
-      return FACEBOOK_COLOR;
-    } else if (source == 'instagram') {
-      return INSTAGRAM_COLOR;
-    } else if (source == 'twitter') {
-      return TWITTER_COLOR;
-    } else if (source == 'youtube') {
-      return YOUTUBE_COLOR;
-    } else {
-      return OTHER_COLOR;
-    }
-  }
-
-  Widget StepperHeader(bool isValid, int stepNumber) {
-    return SizedBox(
-      child: Flex(
-        direction: Axis.horizontal,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Text("Etape",
-              style: TextStyle(
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.w800,
-                  color: BLACK_COLOR),
-              textAlign: TextAlign.center),
-          const SizedBox(width: 10),
-          CircleAvatar(
-            backgroundColor: PURPLE_COLOR,
-            radius: 20,
-            child: isValid
-                ? const Icon(Icons.check, color: WHITE_COLOR, size: 22)
-                : Text(stepNumber.toString(),
-                    style: const TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.w800,
-                        color: WHITE_COLOR),
-                    textAlign: TextAlign.center),
-          )
-        ],
-      ),
-    );
-  }
-
   showModalDialog(BuildContext context, String header, String message) async {
     return showDialog<void>(
       context: context,
@@ -119,43 +67,6 @@ class Utilities {
                 Navigator.of(context).pop();
               },
             )
-          ],
-        );
-      },
-    );
-  }
-
-  confirmExitDialog(BuildContext context, bool onSplash) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Confirmation', style: TextStyle(color: RED_COLOR)),
-          content: const SingleChildScrollView(
-            child: Text('Êtes-vous sûr de vouloir quitter $APP_NAME?'),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text('OUI', style: TextStyle(color: PURPLE_COLOR)),
-              onPressed: () {
-                exit(0);
-              },
-            ),
-            TextButton(
-              child: const Text('NON', style: TextStyle(color: PURPLE_COLOR)),
-              onPressed: () {
-                if (onSplash == true) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              const BigContainer()));
-                } else {
-                  Navigator.of(context).pop();
-                }
-              },
-            ),
           ],
         );
       },

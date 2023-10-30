@@ -20,24 +20,6 @@ class WeatherService {
       log(e.toString());
       log('error $response');
     }
-
-    return response;
-  }
-
-  Future<http.Response?> fetchStudentApplications(String token) async {
-    http.Response? response;
-    String url = "${Utilities.API_BASE_URL}/api/student/admissions";
-    try {
-      response = await http.get(Uri.parse(url), headers: {
-        HttpHeaders.contentTypeHeader: "application/json; charset=utf-8",
-        HttpHeaders.authorizationHeader: "Bearer $token"
-      });
-      log('status ${response.statusCode}');
-      log('body $response');
-    } catch (e) {
-      log(e.toString());
-      log('error $response');
-    }
     return response;
   }
 }

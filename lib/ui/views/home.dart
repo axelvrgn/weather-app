@@ -130,13 +130,13 @@ class _HomePageState extends State<HomePage> {
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.fastOutSlowIn);
                 },
-                child: Icon(
-                  Icons.arrow_upward,
-                  size: 20,
-                ),
                 backgroundColor: PURPLE_DEGRADE_2_COLOR,
                 elevation: 0,
                 splashColor: PURPLE_COLOR,
+                child: const Icon(
+                  Icons.arrow_upward,
+                  size: 20,
+                ),
               ),
             ),
             body: Container(
