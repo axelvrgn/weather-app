@@ -16,8 +16,8 @@ class Loader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SpinKitHourGlass(
-              color: GRAY_DEGRADE_1_COLOR,
+            const SpinKitRing(
+              color: Colors.blue,
             ),
             const SizedBox(
               height: 25,
@@ -27,8 +27,8 @@ class Loader extends StatelessWidget {
                 WavyAnimatedText('Chargement...',
                     speed: const Duration(milliseconds: 500),
                     textStyle: const TextStyle(
-                        color: GRAY_COLOR,
-                        fontSize: 18,
+                        color: Colors.blue,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold)),
               ],
             )

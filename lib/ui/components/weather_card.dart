@@ -83,7 +83,7 @@ class _WeatherCardState extends State<WeatherCard> {
                   children: [
                     const Icon(Icons.arrow_upward),
                     Text(
-                      '${widget.weather.forecast!.forecastday![0].day!.maxtemp_c} °',
+                      '${widget.weather.forecast!.forecastday![0].day!.maxtemp_c!.round()} °',
                       style: const TextStyle(fontSize: 18.0),
                     ),
                   ],
@@ -96,7 +96,7 @@ class _WeatherCardState extends State<WeatherCard> {
                       children: [
                         const Icon(Icons.arrow_downward),
                         Text(
-                          '${widget.weather.forecast!.forecastday![0].day!.mintemp_c} °',
+                          '${widget.weather.forecast!.forecastday![0].day!.mintemp_c!.round()} °',
                           style: const TextStyle(fontSize: 18.0),
                         ),
                       ]))
@@ -111,7 +111,7 @@ class _WeatherCardState extends State<WeatherCard> {
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
                       'Prévisions'.toUpperCase(),
-                      style: const TextStyle(fontSize: 18.0),
+                      style: const TextStyle(fontSize: 16.0),
                     ),
                   ),
                 ],

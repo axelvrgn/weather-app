@@ -34,7 +34,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   Icon customIcon = const Icon(Icons.search);
-  Widget customSearchBar = const Text(Utilities.APP_NAME);
+  Widget customTitle = const Row(children: [
+    Icon(Icons.sunny, color: Colors.yellow, size: 30),
+    Text(Utilities.APP_NAME)
+  ]);
 
   @override
   void initState() {
@@ -68,14 +71,15 @@ class _HomePageState extends State<HomePage> {
     return Consumer<WeatherProvider>(
         builder: (BuildContext context, data, Widget? child) => Scaffold(
             appBar: AppBar(
-              title: customSearchBar,
+              title: customTitle,
+              centerTitle: false,
               actions: [
                 IconButton(
                   onPressed: () {
                     setState(() {
                       if (customIcon.icon == Icons.search) {
                         customIcon = const Icon(Icons.cancel);
-                        customSearchBar = ListTile(
+                        customTitle = ListTile(
                           leading: const Icon(
                             Icons.search,
                             color: Colors.white,
@@ -85,6 +89,7 @@ class _HomePageState extends State<HomePage> {
                             onChanged: (text) {
                               getWeatherData(text);
                             },
+                            autofocus: true,
                             decoration: const InputDecoration(
                               hintText: 'Rechercher un ville...',
                               hintStyle: TextStyle(
@@ -92,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
                               ),
-                              border: InputBorder.none,
+                              //border: InputBorder.none,
                             ),
                             style: const TextStyle(
                               color: Colors.white,
@@ -101,7 +106,11 @@ class _HomePageState extends State<HomePage> {
                         );
                       } else {
                         customIcon = const Icon(Icons.search);
-                        customSearchBar = const Text(Utilities.APP_NAME);
+                        customTitle = const Row(children: [
+                          Icon(Icons.sunny, color: Colors.yellow, size: 30),
+                          Text(Utilities.APP_NAME)
+                        ]);
+                        ;
                       }
                     });
                   },

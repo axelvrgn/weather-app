@@ -19,7 +19,7 @@ class _WeatherPerHourState extends State<WeatherPerHour> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
+      width: 70,
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Wrap(
